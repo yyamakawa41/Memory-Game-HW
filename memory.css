@@ -1,40 +1,44 @@
+img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .mg_wrapper {
   /*set the width to 100%*/
   /*Also set a max-width so the pics don't pixelate*/
   /*margin*/
   width: 100%;
-  max-width: 100%;
-  margin: auto;
-  position: absolute;
+  max-width: 1024px;
+  margin: 0 auto;
 
 }
 
 #mg_contents {
 /*  Must have a set position
   must have padding to accomodate absolute elements*/
-  margin: auto;
-  padding: 15px;
+  position: relative;
+  height: 100%;
 
 }
 
 .mg_tile {
   /*Each tile needs a set position*/
+  position: absolute;
+  padding: 5px;
+  height: 50%;
+  width: 25%;
+  border: 5px solid white;
 
 }
 
 /* game_level-1 styles */
-.mg_tile {
-  width: 300px;
-  height: 300px;
-  float: left;
-  border: 2px solid black;
-  margin: 4px;
-}
+
 
 /*Each element needs top % and left % so it appears in the right slot. The second one is done for you.*/
 .mg_tile-1 {
   top: 0%;
-  left: 25%;
+  left: 0%;
 }
 .mg_tile-2 {
   top: 0%;
@@ -42,33 +46,36 @@
 }
 .mg_tile-3 {
   top: 0%;
-  left: 25%;
+  left: 50%;
 }
 .mg_tile-4 {
   top: 0%;
-  left: 25%;
+  left: 75%;
 }
 .mg_tile-5 {
-  top: 0%;
-  left: 25%;
+  top: 50%;
+  left: 0%;
 }
 .mg_tile-6 {
-  top: 0%;
+  top: 50%;
   left: 25%;
 }
 .mg_tile-7 {
-  top: 0%;
-  left: 25%;
+  top: 50%;
+  left: 50%;
 }
 .mg_tile-8 {
-  top: 0%;
-  left: 25%;
+  top: 50%;
+  left: 75%;
 }
 
 .mg_tile-inner {
   /*The inner must have a position to accomodate the inside and outside elements*/
   /*Height and width must be counter-set*/
   /*Make the mouse a hand when over the tile*/
+  position: relative;
+  height: 100%;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -77,26 +84,34 @@
   /*position must be set*/
   /*top and left must be set*/
   /*height and width must be set*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
 
 
 .mg_tile-outside {
+  background: url("images/logo-bw.png") center no-repeat;
+  background-color: gray;
+  width: 100%;
+  display: block;
   /*Must use the background element and set the background to  ../img/default/logo-bw.png */
   /*Change the bg color so it's obviously not turned over*/
   /*Optional: create a box shadow*/
   /*set the width*/
   /*set a default display ... this must be different than .mg_tile-inside*/
-  border: red;
-  width: 300px;
-  height: 300px;
-  float: left;
+ 
 }
 
 .mg_tile-inside {
   /*set a bg-color*/
   /*Optional: create a box shadow*/
   /*set a default display ... this must be different than .mg_tile-outside*/
-  width: 300px;
-  height: 300px;
-  float: left;
+  background-color: red;
+  display: none;
+
 }
 
