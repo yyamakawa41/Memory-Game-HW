@@ -25,7 +25,7 @@ img{
 .mg_tile {
   /*Each tile needs a set position*/
   position: absolute;
-  padding: 5px;
+  padding: 0px;
   height: 50%;
   width: 25%;
   border: 5px solid white;
