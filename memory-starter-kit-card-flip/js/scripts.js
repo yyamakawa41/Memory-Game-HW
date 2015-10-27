@@ -19,7 +19,7 @@ $(document).ready(function(){
         var theObject = {
             tile: i,
             cardValue: cardValue,
-            pic: 'img/default/monsters-0'+x+'.png'
+            pic: 'img/default/monsters-'+x+'.png'
 
         };
         //Push our object onto the array

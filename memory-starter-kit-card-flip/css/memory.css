@@ -69,7 +69,7 @@ img {
   /*Rotate on the Y 180*/
   transform: rotateY( 180deg );
   /*That flip now needs some horizontal movement with translateX. We’ll set the rotation to -180deg so it flips right side out.*/
-  transform: translateX( -100% ) rotateY( -180deg );
+  transform: translateX( -100% ) rotateY( -1260deg );
 }
 
 .mg_tile-outside,
