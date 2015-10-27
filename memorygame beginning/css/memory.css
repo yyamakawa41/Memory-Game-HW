@@ -27,14 +27,12 @@ img {
 
 /* game_level-1 styles */
 .mg_tile {
-  /*Set the height and width of each element but change later with jQuery*/
+  /*Set the width of each element*/
+  /*Set the height of each element*/
   height: 50%;
   width: 25%;
   padding: 5px;  
-  box-sizing: border-box;   
-  /*Add in perspective for 3D trans. Distance between layers (lower for affect)*/
-  position: relative;
-  perspective: 500px;
+  box-sizing: border-box;    
 }
 
 /*Each element needs top % and left % so it appears in the right slot. The second one is done for you.*/
@@ -46,34 +44,14 @@ img {
   /*The inner must have a position to accomodate the inside and outside elements*/
   /*Height and width must be counter-set*/
   /*Make the mouse a hand when over the tile*/
-  /*position: relative;*/
+  position: relative;
   width: 100%;
   height: 100%;
   cursor: pointer;  
-
-  /*Add our transform: effect and change position to absolute;*/
-  /*The .container’s perspective only applies to direct descendant children, 
-  in this case #mg_tile-inner. In order for subsequent children to inherit a parent’s 
-  perspective, and live in the same 3D space, the parent can pass along 
-  its perspective with transform-style: preserve-3d. Without 3D transform-style, 
-  the faces of the card would be flattened with its parents and the back 
-  face’s rotation would be nullified.  */
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 1s;  
-  /*To change the point at which the card pivots*/
-  transform-origin: right center;
-}
-
-.mg_tile-inner.flipped{
-  /*Rotate on the Y 180*/
-  transform: rotateY( 180deg );
-  /*That flip now needs some horizontal movement with translateX. We’ll set the rotation to -180deg so it flips right side out.*/
-  transform: translateX( -100% ) rotateY( -1260deg );
 }
 
 .mg_tile-outside,
-.mg_tile-inside{
+.mg_tile-inside, .mg_tile-inside-matched {
   /*position must be set*/
   /*top and left must be set*/
   /*height and width must be set*/
@@ -82,14 +60,10 @@ img {
   left: 0;
   width: 100%;
   height: 100%;  
-
-  /*Set side of the back of the card to backface-visibility hidden
-  otherwise we will immidately see the back face on transition */
-  backface-visibility: hidden;  
 }
 
 .mg_tile-outside {
-  /*Must use the background element and set the background to  ../img/default/logo-bw.png 
+  /*Must use the background element and set the background to  ../img/default/logo-bw.png */
   /*Change the bg color so it's obviously not turned over*/
   /*set the width*/
   /*set a default display ... this must be different than .mg_tile-inside*/
@@ -101,16 +75,14 @@ img {
   display: block;
 }
 
-.mg_tile-inside{
+.mg_tile-inside, .mg_tile-inside-matched {
   /*set a bg-color*/
   /*set a default display ... this must be different than .mg_tile-outside*/
   background-color: #f8fafc;
   box-shadow: 0 0 0 1px #787a80;
   height: 100%;
   width: 100%;
-  /*display: none;  */
-  /*Add the transform to the backside*/
-  transform: rotateY( 180deg );
+  display: none;  
 }
 
 .dropped{
